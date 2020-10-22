@@ -1,0 +1,81 @@
+<ion-content scroll="false">
+
+  <ion-slides #slides pager="false" dir="{{dir}}">
+   
+    <ion-slide style="background-image: url('assets/img/background/multicolor.jpg'); background-size: 100%;">
+      <ion-grid style="height: 90%;">
+        <ion-row justify-content-center align-items-center style="height: 100%;">
+          <div style="color: white; width: 240px; text-align: left;">
+            <h2 style="margin-bottom: 0px;">¡Bienvenido al revelador del cociente triádico!</h2>
+            <p style="font-size: 10pt; margin-top: 0px;">Nivel 1</p>
+            <p></p>
+            <p style="font-size: 10pt;">Responde las siguientes preguntas y valórate de 1 a 5, siendo 1 de "menos frecuencia" y 5 de "mayor frecuencia".</p>
+            <br/>
+            <br/>
+            <button ion-button round block (click)="next()" style="background-color: orange; text-transform: none;">¡Comienza Ya!&nbsp;<ion-icon name="arrow-forward"></ion-icon></button>
+            <button ion-button outline round block (click)="logout()" style="border-color: #041728; color: white; text-transform: none;
+            margin-top:12px;">Cerrar sesión</button>
+          </div>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+
+    <ion-slide *ngFor="let pregunta of preguntas" [ngStyle]="{'background-color': pregunta.color}">
+      <ion-grid style="height: 85%;">
+        <ion-row justify-content-center align-items-center style="height: 100%;">
+          <table style="width: 90%; height: 100vh;">
+            <thead>
+              <tr>
+                <th style="color: white;">
+                  <div style="width: 90%; margin: 0px auto;">
+                    <h3 style="font-size: 13pt; font-weight: bold; text-align: left; margin-top: 45px;" [innerHTML]="pregunta.titulo"></h3>      
+                    <h5 style="font-size: 10pt; text-align: justify;" [innerHTML]="pregunta.subtitulo"></h5>
+                  </div>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align: right;">
+                  <button ion-button clear large style="color: black;" (click)="help(pregunta.ayuda)"> 
+                    <ion-icon name="help-circle"></ion-icon>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td style="vertical-align: bottom;">
+                  <img [src]="'assets/img/questions/icons/' + pregunta.centro" style="height: 160px;"/>
+                </td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <th style="padding-bottom: 24px;" nowrap>
+                  <button [disabled]="isDisabled1" [ngStyle]="{'background-color': bgColor1, 'color': fgColor1}" ion-button outline style="width: 15%; border-color: #001F35;" (click)="answer(pregunta.id, 1)">1</button>
+                  <button [disabled]="isDisabled2" [ngStyle]="{'background-color': bgColor2, 'color': fgColor2}" ion-button outline style="width: 15%; border-color: #001F35;" (click)="answer(pregunta.id, 2)">2</button>
+                  <button [disabled]="isDisabled3" [ngStyle]="{'background-color': bgColor3, 'color': fgColor3}" ion-button outline style="width: 15%; border-color: #001F35;" (click)="answer(pregunta.id, 3)">3</button>
+                  <button [disabled]="isDisabled4" [ngStyle]="{'background-color': bgColor4, 'color': fgColor4}" ion-button outline style="width: 15%; border-color: #001F35;" (click)="answer(pregunta.id, 4)">4</button>
+                  <button [disabled]="isDisabled5" [ngStyle]="{'background-color': bgColor5, 'color': fgColor5}" ion-button outline style="width: 15%; border-color: #001F35;" (click)="answer(pregunta.id, 5)">5</button>
+                </th>
+              </tr>
+            </tfoot>
+          </table>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+
+    <!--
+    <ion-slide style="background-image: url('assets/img/background/multicolor.jpg');">
+      <ion-grid style="height: 90%;">
+        <ion-row justify-content-center align-items-center style="height: 100%;">
+          <div style="color: white; width: 240px; text-align: left;">
+            <h1>FIN</h1>
+          </div>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+    -->
+
+  </ion-slides>
+
+</ion-content>

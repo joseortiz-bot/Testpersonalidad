@@ -1,0 +1,46 @@
+<!--
+<ion-header no-shadow *ngIf="showSkip">
+  <ion-navbar>
+    <ion-buttons end>
+      <button ion-button (click)="startApp()" color="primary" style="text-transform: none;">Saltar</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+-->
+
+<ion-content no-bounce>
+  <ion-slides pager="true" dir="{{dir}}" (ionSlideWillChange)="onSlideChangeStart($event)">
+
+    <ion-slide *ngFor="let slide of slides" [ngStyle]="{'background-image': 'url(' + slide.background + ')'}">
+      <ion-grid style="height: 90%;">
+        <ion-row justify-content-center align-items-center style="height: 100%;">
+          <div>
+            <img [src]="slide.image" class="slide-image"/>
+            <p style="font-size: 12pt; font-weight: bold; text-align: left; color: black;" [innerHTML]="slide.title"></p>
+            <p style="font-size: 10pt; text-align: justify; color: #111;" [innerHTML]="slide.description"></p>
+          </div>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+
+    <ion-slide [ngStyle]="{'background-image': 'url(assets/img/tutorial/bgIntro6.png)'}">
+     <ion-grid style="height: 90%;">
+        <ion-row justify-content-center align-items-center style="height: 100%;">
+          <div>
+            <img src="assets/img/tutorial/logo.png" style="width: 160px;"/>
+            <br/><br/>
+            <p style="font-size: 9pt; color:#ffffff;">Bienvenido a esta aventura de conocer cómo desarrollar todo tu potencial en lo personal, familiar y profesional.</p>
+            <p style="font-size: 10pt;color:#001F35;">Esto es Napps</p>
+            <div style="width: 75%; margin: 0px auto;">
+              <button ion-button fill round block (click)="signUp()" style="background-color: #041728; text-transform: none; font-size: 13px;">¡Comienza ya!</button>
+              <br/>
+              <button ion-button outline round block (click)="login()" style="border-color: #041728; color: #041728; margin-top: -22px; font-size: 13px;  text-transform: none;">Ya eres miembro, identifícate</button>
+        
+            </div>
+          </div>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+
+  </ion-slides>
+</ion-content>

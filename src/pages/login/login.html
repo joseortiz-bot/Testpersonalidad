@@ -1,0 +1,57 @@
+<!-- 
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ 'LOGIN_TITLE' | translate }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+-->
+
+<ion-content scroll="false" style="background-image: url('assets/img/background/blue.png'); background-size: 400px;">
+
+  <ion-grid style="height: 90%;">
+    <ion-row justify-content-center align-items-center style="height: 100%;">
+      <div style="text-align: center;">
+        <img src="assets/img/background/logo.png" style="width: 130px; margin-top: 80px;"/>
+        <br/><br/><br/>
+
+        <form>
+
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <ion-icon name="mail"></ion-icon>
+                </td>
+                <td style="padding-left: 8px;">
+                  <ion-input type="email" [(ngModel)]="account.email" name="email" style="border-bottom: 1px solid #041728;" placeholder="Correo"></ion-input>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <ion-icon name="key"></ion-icon>
+                </td>
+                <td style="padding-left: 8px;">
+                  <ion-input type="password" [(ngModel)]="account.password" name="password" style="border-bottom: 1px solid #041728;" placeholder="Contraseña"></ion-input>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <br/><br/>
+
+          <button ion-button fill round block (click)="doLogin()" style="background-color: #041728; text-transform: none;">Iniciar Sesión</button>
+          <button ion-button outline round block (click)="back()" style="border-color: #041728; color: white; text-transform: none; margin-top: 10px;">Volver</button>
+          <br/>
+          <br/>
+          <button ion-button outline round block (click)="recovery()" style="border-color: #041728; color: white; text-transform: none; margin-top: 10px;">Recuperar Contraseña</button>
+          <br/>
+
+        </form>
+
+      </div>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

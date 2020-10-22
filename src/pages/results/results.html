@@ -1,0 +1,199 @@
+<ion-content style="background-image: url('assets/img/results/backgrounds/blue.png'); background-size: 400px;">
+
+  <div style="width: 90%; margin: 0px auto; margin-top: 25px;">
+
+    <div style="padding: 8px 8px 8px 8px;">
+      <span style="font-size: 14pt; font-weight: bold; color: white;
+      ">Resumen</span>
+    </div>
+
+    <div style="background-color: white; border-radius: 5px; padding: 8px 8px 8px 8px;">
+
+      <table style="width: 100%;">
+        <tbody>
+          <tr>
+            <td style="width: 32px;">
+              <img style="margin-top: 8px;" src="assets/img/results/icons/cerebro.png"/>
+            </td>
+            <td style="padding-left: 8px;">
+              <span>Dominancia Cerebral</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div>
+
+        <hr style="border-style: dashed;"/>
+
+        <div style="padding-left: 8px; padding-right: 8px;">
+          <table style="width: 100%; border-spacing: 4px; border-collapse: separate;">
+            <tbody>
+              <tr>
+                <td colspan="2" [ngStyle]="{'width': '96px', 'height': '96px', 'text-align': 'center', 'vertical-align': 'middle'}">
+                  <div style="position: relative; width: 96px; height: 96px;">
+                    <div style="width: 96px; height: 96px; position: absolute; top: 0; left: 0;">
+                      <div [innerHTML]="svg1"></div>
+                    </div>
+                    <div style="width: 96px; height: 96px; position: absolute; top: 0; left: 0; padding-top: 24px;">
+                      <span style="font-size: 36pt; color: black;">{{dominante.puntaje}}</span>  
+                    </div>
+                  </div>
+                </td>
+                <td style="padding: 4px 8px 4px 8px;">
+                  <span style="font-size: 8pt; color: #AAAAAA;">Dominante</span>
+                  <br/>
+                  <span style="font-size: 12pt; font-weight: bold; color: black;">{{dominante.cerebro.texto}}</span>
+                  <br/>
+                  <span style="font-size: 8pt; color: #AAAAAA;">Este es tu puntaje más alto en tu cerebro</span>
+                </td>
+              </tr>
+              <tr>
+                <td style="width: 48px;">
+                  <div [innerHTML]="svg2"></div>
+                </td>
+                <td style="width: 48px; text-align: center; vertical-align: middle;">
+                  <span style="font-size: 24pt; color: #AAAAAA;">{{subdominante.puntaje}}</span>
+                </td>
+                <td style="padding: 4px 8px 4px 8px;">
+                  <span style="font-size: 8pt; color: #AAAAAA;">Sub Dominante</span>
+                  <br/>
+                  <span style="font-size: 12pt; font-weight: bold; color: black;">{{subdominante.cerebro.texto}}</span>
+                </td>
+              </tr>
+              <tr>
+                <td style="width: 48px;">
+                  <div [innerHTML]="svg3"></div>
+                </td>
+                <td style="width: 48px; text-align: center; vertical-align: middle;">
+                  <span style="font-size: 24pt; color: #AAAAAA;">{{oscilante.puntaje}}</span>
+                </td>
+                <td style="padding: 4px 8px 4px 8px;">
+                  <span style="font-size: 8pt; color: #AAAAAA;">Oscilante</span>
+                  <br/>
+                  <span style="font-size: 12pt; font-weight: bold; color: black;">{{oscilante.cerebro.texto}}</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+
+    </div>
+
+    <br/>
+
+    <div style="background-color: white; border-radius: 5px; padding: 8px 8px 8px 8px;">
+
+      <table style="width: 100%;">
+        <tbody>
+          <tr>
+            <td style="width: 32px;">
+              <img style="margin-top: 8px;" src="assets/img/results/icons/engranaje.png"/>
+            </td>
+            <td style="padding-left: 8px;">
+              <span>Lógica de Pensamiento</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div>
+
+        <hr style="border-style: dashed;"/>
+
+        <table style="width: 100%; border-spacing: 4px; border-collapse: separate;">
+          <tbody>
+            <tr>
+              <td>
+                <img src="assets/img/results/icons/cabezaengranaje.png" style="width: 240px;"/>
+              </td>
+              <td style="padding: 4px 8px 4px 8px;">
+                <p style="font-size: 8pt; color: #AAAAAA; text-align: justify;">
+                  {{logica}}
+                </p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+
+    </div>    
+
+    <br/>
+
+    <div style="background-color: white; border-radius: 5px; padding: 8px 8px 8px 8px;">
+
+      <table style="width: 100%;">
+        <tbody>
+        <tr>
+            <td style="width: 32px;">
+              <img src="assets/img/results/icons/meta.png"/>
+            </td>
+            <td style="padding-left: 8px;">
+             <span>Habilidades por mejorar</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr style="border-style: dashed;"/>
+
+      <table style="width: 100%;">
+        <tbody>
+          <tr>
+            <td style="width: 120px;">
+              <span style="color: #AAAAAA; font-size: 8pt;">{{habilidadPorMejorar1.porcentaje}}%</span>
+              <div style="background-color: #AAAAAA; width: 100px; border-radius: 5px;">
+                <div style="border-radius: 5px; font-size: 4pt;" [ngStyle]="{'background-color': habilidadPorMejorar1.color}" [style.width]="habilidadPorMejorar1.porcentaje + '%'">&nbsp;</div>
+              </div>
+            </td>
+            <td style="vertical-align: bottom;">
+              {{habilidadPorMejorar1.area}}
+            </td>
+          </tr>
+          <tr> 
+            <td style="font-size: 4pt;" colspan="2">&nbsp;</td>
+          </tr>
+          <tr>
+            <td style="width: 120px;">
+              <span style="color: #AAAAAA; font-size: 8pt;">{{habilidadPorMejorar2.porcentaje}}%</span>
+              <div style="background-color: #AAAAAA; width: 100px; border-radius: 5px;">
+                <div style="border-radius: 5px; font-size: 4pt;" [ngStyle]="{'background-color': habilidadPorMejorar2.color}" [style.width]="habilidadPorMejorar2.porcentaje + '%'">&nbsp;</div>
+              </div>
+            </td>
+            <td style="vertical-align: bottom;">
+              {{habilidadPorMejorar2.area}}
+            </td>
+          </tr>
+          <tr> 
+            <td style="font-size: 4pt;" colspan="2">&nbsp;</td>
+          </tr>
+          <tr>
+            <td style="width: 120px;">
+              <span style="color: #AAAAAA; font-size: 8pt;">{{habilidadPorMejorar3.porcentaje}}%</span>
+              <div style="background-color: #AAAAAA; width: 100px; border-radius: 5px;">
+                <div style="border-radius: 5px; font-size: 4pt;" [ngStyle]="{'background-color': habilidadPorMejorar3.color}" [style.width]="habilidadPorMejorar3.porcentaje + '%'">&nbsp;</div>
+              </div>
+            </td>
+            <td style="vertical-align: bottom;">
+              {{habilidadPorMejorar3.area}}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+    <br/>
+
+    <div style="margin-bottom: 24px;">
+      <button ion-button fill round block (click)="more()" style="background-color: #041728; text-transform: none;">Conócete aún mas</button>
+      <button ion-button outline round block (click)="logout()" style="border-color: #041728; color: white; text-transform: none;">Cerrar sesión</button>
+    </div>
+
+  </div>
+
+</ion-content>
